@@ -51,6 +51,9 @@ function writeRegistryToFile(
     : `registry=${registryUrl}`;
   const alwaysAuthString: string = `always-auth=${alwaysAuth}`;
   newContents += `${authString}${os.EOL}${registryString}${os.EOL}${alwaysAuthString}`;
+
+  console.log('***FILE CONTENTS***', newContents);
+
   fs.writeFileSync(fileLocation, newContents);
   core.exportVariable('NPM_CONFIG_USERCONFIG', fileLocation);
   // Export empty node_auth_token so npm doesn't complain about not being able to find it
