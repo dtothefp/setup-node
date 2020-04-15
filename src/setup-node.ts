@@ -36,6 +36,4 @@ async function run() {
   }
 }
 
-console.log('***RUN FUNCTION***');
-
 run();
